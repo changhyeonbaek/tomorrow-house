@@ -21,8 +21,10 @@
     margin: 0 4px;
 
     &.tns-nav-active {
-      opacity: 1;
-      transform: scale(1.333333);
+      button {
+        opacity: 1;
+        transform: scale(1.333333);
+      }
     }
 
     button {
@@ -42,5 +44,49 @@
   img {
     width: 100%;
     height: auto;
+  }
+
+  @include responsive(T) {
+    padding-right: 30px;
+
+    &-slider {
+      margin: 0 0 8px 0;
+      overflow: hidden;
+      border-radius: 4px;
+    }
+
+    &-thumbnail {
+      position: static;
+      transform: none;
+    }
+
+    .thumbnail-list {
+      justify-content: flex-start;
+    }
+
+    .thumbnail-item {
+      margin: 0 8px 0 0;
+
+      &.tns-nav-active {
+        button {
+          border: 2px solid $blue;
+          transform: none;
+        }
+      }
+
+      button {
+        @include flexbox;
+        width: 56px;
+        height: 56px;
+        overflow: hidden;
+        border-radius: 4px;
+        opacity: 1;
+      }
+
+      img {
+        display: block;
+        width: 56px;
+      }
+    }
   }
 }
