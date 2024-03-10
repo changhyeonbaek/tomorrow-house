@@ -1,0 +1,25 @@
+.breadcrumb {
+  @include flexbox(start);
+
+  a {
+    @include text-style(13, $secondary);
+  }
+
+  .ic-chevron {
+    display: inline-block;
+    margin: 0 2px;
+    font-size: 12px;
+    color: $tertiary;
+    transform: rotate(-90deg);
+  }
+
+  @include responsive(T) {
+    a {
+      @include text-style(14);
+    }
+
+    .ic-chevron {
+      margin: 0 4px;
+    }
+  }
+}
