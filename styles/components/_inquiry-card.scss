@@ -57,24 +57,31 @@
     }
 
     p {
+      @include flexbox(start);
       color: $primary;
+
+      i {
+        margin-right: 8px;
+        font-size: 16px;
+        color: $tertiary;
+      }
     }
   }
 
   @include responsive(T) {
     &-header {
       margin-bottom: 20px;
-    }
 
-    &-body {
-      @include text-style(14);
+      &-body {
+        @include text-style(14);
 
-      .question-content {
-        padding-left: 24px;
-      }
+        .question-content {
+          padding-left: 24px;
+        }
 
-      span {
-        @include text-style(16);
+        span {
+          @include text-style(16);
+        }
       }
     }
   }
