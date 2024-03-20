@@ -16,4 +16,29 @@ function closeOrderModal() {
   orderModalOverlay.classList.remove('is-active')
 }
 
-orderModalOverlay.addEventListener('click', )
+orderModalOverlay.addEventListener('click', closeOrderModal)
+
+function toggleOrderCtaBookmark() {
+  // 카운트 숫자 값을 변경
+  const [icon, countSpan] = this.children
+  const count = Number(countSpan.innerHTML.replaceAll(',', ''))
+  
+  let newCount = count
+
+  if (this.classList.contains('is-active')) {
+    icon.classList.add('ic-bookmark')
+    icon.classList.remove('ic-bookmark-filled')
+    newCount -= 1
+  } else {
+    icon.classList.add('ic-bookmark-filled')
+    icon.classList.remove('ic-bookmark')
+    newCount += 1
+  }
+
+  countSpan.innerHTML = newCount.toLocaleString()
+  
+  this.classList.toggle('is-active')
+
+}
+
+orderCtaBookmarkButton.addEventListener('click', toggleOrderCtaBookmark)
